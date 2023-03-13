@@ -18,7 +18,7 @@ st.markdown(
    f"""
    <style>
    p {
-   background-image: url(‘/bg.jpg’);
+   background-image: url(‘bg.jpg’);
    }
    </style>
    """,
