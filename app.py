@@ -1,13 +1,13 @@
 import pickle
 import pandas as pd
 import numpy as np
-from scikit-learn.preprocessing import RobustScaler
+from sklearn.preprocessing import RobustScaler
 import streamlit as st
 
 model_d = pickle.load(open('d_prediction.sav','rb'))
 model_s = pickle.load(open('s_prediction.sav','rb'))
 
-st.title("Synthesis of Design Parameters of a Square Loop based FSS using ML Approach/Technique")
+st.title("Synthesis of Design Parameters of a Square Loop based FSS using ML Technique")
 
 st.header('For FR-4 Substrate')
 
