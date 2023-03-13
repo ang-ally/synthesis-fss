@@ -19,7 +19,7 @@ def add_bg_from_url():
          f"""
          <style>
          .stApp {{
-             background-image: url("https://github.com/ang-ally/synthesis-fss/blob/main/bg.jpg");
+             background-image: url("/bg.jpg");
              background-attachment: fixed;
              background-size: cover
          }}
