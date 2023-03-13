@@ -56,6 +56,7 @@ if st.button("Predict"):
     
     d_pred = model_d.predict([[h,fr,fl,fh,bw,fbw,g]])
     col1.metric(label="Track Length in mm is : ",value=d_pred)
+    d_pred=np.round(d_pred,2)
     
     df=pd.read_excel('final fr4 ds.xlsx')
     X=df[['h','fr','fl','fh','bw','fbw','g']]
@@ -69,6 +70,7 @@ if st.button("Predict"):
     s_pred=s_pred.reshape(-1,1)
     s_pred=scale_out.inverse_transform(s_pred)
     s_pred=s_pred.reshape(1,-1) 
+    s_pred=np.round(s_pred,2)
     col2.metric(label="Track Width in mm is: ",value=s_pred)  
 
                  
