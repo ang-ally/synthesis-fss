@@ -14,7 +14,7 @@ import streamlit as st
 model_d = pickle.load(open('d_prediction.sav','rb'))
 model_s = pickle.load(open('s_prediction.sav','rb'))
 
-st.title("Synthesis of Square Loop FSS using ML")
+st.title("Synthesis of Design Parameters of a Square Loop based FSS using ML Approach/Technique")
 def add_bg_from_url():
     st.markdown(
          f"""
@@ -42,14 +42,7 @@ fl = st.number_input("Lower-cutoff Frequency in GHz (fl)",min_value=0.01,max_val
 fh = st.number_input("Higher-cutoff Frequency in GHz (fh)",min_value=0.01,max_value=5.00,step=0.01)
 bw = fh - fl
 fbw = bw / fr
-g = st.selectbox('Inter-gap Element spacing in mm (g)',(0.25,0.375,0.5))
-
-
-# code for Prediction
-msg1 = list()
-msg1.append("Track-length (d) is")
-msg2 = list()
-msg2.append("Track-width (s) is")
+g = st.selectbox('Inter Element Spacing in mm (g)',(0.25,0.375,0.5))
 
 # creating a button for Prediction    
 if st.button("Predict"):
