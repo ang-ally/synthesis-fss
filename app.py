@@ -21,7 +21,7 @@ def set_background(png_file):
     page_bg_img = '''
     <style>
     body {
-    background-image: url("data:image/png;base64,%s");
+    background-image: url("data:image/png;pybase64,%s");
     background-size: cover;
     }
     </style>
