@@ -40,7 +40,7 @@ with col1:
     h = st.selectbox('Height of the Substrate in mm (h)',(0.8,1.6,3.2))
 with col2:
     fr = st.number_input("Resonant Frequency in GHz (fr)",min_value=0.01,max_value=5.00,step=0.01)
-with col13:
+with col3:
     fl = st.number_input("Lower-cutoff Frequency in GHz (fl)",min_value=0.01,max_value=5.00,step=0.01)
 with col1:
     fh = st.number_input("Higher-cutoff Frequency in GHz (fh)",min_value=0.01,max_value=5.00,step=0.01)
