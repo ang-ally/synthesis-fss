@@ -11,9 +11,9 @@ st.title("Synthesis of Design Parameters of a Square Loop based FSS using ML Tec
 
 st.header('For FR-4 Substrate')
 
-st.caption('The Range for Resonant Frequency: 0 < fr < 5') 
-st.caption('The Range for Lower-cutoff Frequency: 0 < fl < 5')
-st.caption('The Range for Higher-cutoff Frequency: 0 < fh < 5')
+st.caption('The Range for Resonant Frequency (fr): 0 < fr < 5 GHz') 
+st.caption('The Range for Lower-cutoff Frequency (fl): 0 < fl < 5 GHZ')
+st.caption('The Range for Higher-cutoff Frequency (fh): 0 < fh < 5 GHz')
 
 h = st.selectbox('Height of the Substrate in mm (h)',(0.8,1.6,3.2))
 fr = st.number_input("Resonant Frequency in GHz (fr)",min_value=0.01,max_value=5.00,step=0.01)
