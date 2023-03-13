@@ -43,7 +43,13 @@ if st.button("Predict"):
     msg1.append(d_pred)
     st.success(msg1) 
     
-    df=pd.read_excel('final fr4 ds.xlsx')
+    uploaded_file = st.file_uploader(
+    "final fr4 ds.xlsx", accept_multiple_files=False)
+    if uploaded_file is not None:
+        file_name = uploaded_file
+    else:
+        file_name = "final fr4 ds.xlsx"
+    df=pd.read_excel(filename)
     X=df[['h','fr','fl','fh','bw','fbw','g']]
     Y=df[['s']]
     scale_in=RobustScaler()
