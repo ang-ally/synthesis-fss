@@ -14,19 +14,14 @@ st.header('For FR-4 Substrate')
 st.caption('The Range for Resonant Frequency: 0 < fr < 5') 
 st.caption('The Range for Lower-cutoff Frequency: 0 < fl < 5')
 st.caption('The Range for Higher-cutoff Frequency: 0 < fh < 5')
-col1, col2, col3 = st.columns(3)
-with col1:
-    h = st.selectbox('Height of the Substrate in mm (h)',(0.8,1.6,3.2))
-with col2:
-    fr = st.number_input("Resonant Frequency in GHz (fr)",min_value=0.01,max_value=5.00,step=0.01)
-with col3:
-    fl = st.number_input("Lower-cutoff Frequency in GHz (fl)",min_value=0.01,max_value=5.00,step=0.01)
-with col1:
-    fh = st.number_input("Higher-cutoff Frequency in GHz (fh)",min_value=0.01,max_value=5.00,step=0.01)
+
+h = st.selectbox('Height of the Substrate in mm (h)',(0.8,1.6,3.2))
+fr = st.number_input("Resonant Frequency in GHz (fr)",min_value=0.01,max_value=5.00,step=0.01)
+fl = st.number_input("Lower-cutoff Frequency in GHz (fl)",min_value=0.01,max_value=5.00,step=0.01)
+fh = st.number_input("Higher-cutoff Frequency in GHz (fh)",min_value=0.01,max_value=5.00,step=0.01)
 bw = fh - fl
 fbw = bw / fr
-with col2:
-    g = st.selectbox('Inter Element Spacing in mm (g)',(0.25,0.375,0.5))
+g = st.selectbox('Inter Element Spacing in mm (g)',(0.25,0.375,0.5))
 
 # creating a button for Prediction    
 if st.button("Predict"):
