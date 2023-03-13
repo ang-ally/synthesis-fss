@@ -7,6 +7,7 @@ Created on Sun Mar 12 21:18:02 2023
 
 import pickle
 import pandas as pd
+import numpy as np
 from sklearn.preprocessing import RobustScaler
 import streamlit as st
 
