@@ -1,5 +1,5 @@
 import pickle
-import base64
+import pybase64
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import RobustScaler
@@ -13,7 +13,7 @@ st.title("Synthesis of Design Parameters of a Square Loop based FSS using ML App
 def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
-    return base64.b64encode(data).decode()
+    return pybase64.b64encode(data).decode()
 
 
 def set_background(png_file):
