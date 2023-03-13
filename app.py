@@ -15,13 +15,13 @@ model_s = pickle.load(open('s_prediction.sav','rb'))
 
 st.title("Synthesis of Square Loop FSS using ML")
 st.markdown(
-   f”””
+   f"""
    <style>
    p {
    background-image: url(‘/bg.jpg’);
    }
    </style>
-   ”””,
+   """,
    unsafe_allow_html=True)
 st.header('For FR-4 Substrate')
 
