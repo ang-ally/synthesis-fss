@@ -14,15 +14,21 @@ model_d = pickle.load(open('d_prediction.sav','rb'))
 model_s = pickle.load(open('s_prediction.sav','rb'))
 
 st.title("Synthesis of Square Loop FSS using ML")
-st.markdown(
-   f"""
-   <style>
-   p {
-   background-image: url(‘bg.jpg’);
-   }
-   </style>
-   """,
-   unsafe_allow_html=True)
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://github.com/ang-ally/synthesis-fss/blob/main/bg.jpg");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+add_bg_from_url()
 st.header('For FR-4 Substrate')
 
 st.caption('The Range for Resonant Frequency: 0 < fr < 5') 
