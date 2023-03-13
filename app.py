@@ -25,8 +25,8 @@ h = st.selectbox('Height of the Substrate in mm (h)',(0.8,1.6,3.2))
 fr = st.text_input("Resonant Frequency in GHz (fr)")
 fl = st.text_input("Lower-cutoff Frequency in GHz (fl)")
 fh = st.text_input("Higher-cutoff Frequency in GHz (fh)")
-bw = st.text_input("Bandwidth in GHz (bw)")
-fbw = st.text_input("Fractional bandwidth (fbw)")
+bw = float(float(fh) - float(fl))
+fbw = float(float(bw)/float(fr))
 g = st.selectbox('Inter-gap Element spacing in mm (g)',(0.25,0.375,0.5))
 
 
