@@ -28,7 +28,7 @@ def set_background(png_file):
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
-set_background('./bg.jpg')
+set_background('/bg.jpg')
 
 st.header('For FR-4 Substrate')
 
