@@ -1,7 +1,7 @@
 import pickle
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import RobustScaler
+from scikit-learn.preprocessing import RobustScaler
 import streamlit as st
 
 model_d = pickle.load(open('d_prediction.sav','rb'))
