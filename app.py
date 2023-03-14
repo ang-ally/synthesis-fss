@@ -12,16 +12,16 @@ st.title("Synthesis of Design Parameters of a Square Loop based FSS using ML Tec
 st.header('For FR-4 Substrate')
 
 st.caption('The Range for Resonant Frequency (fr): 0 < fr < 5 GHz') 
-st.caption('The Range for Lower-cutoff Frequency (fl): 0 < fl < 5 GHZ')
-st.caption('The Range for Higher-cutoff Frequency (fh): 0 < fh < 5 GHz')
+st.caption('The Range for Lower cutoff Frequency (fl): 0 < fl < 5 GHZ')
+st.caption('The Range for Higher cutoff Frequency (fh): 0 < fh < 5 GHz')
 
 h = st.selectbox('Height of the Substrate in mm (h)',(0.8,1.6,3.2))
 fr = st.number_input("Resonant Frequency in GHz (fr)",min_value=0.01,max_value=5.00,step=0.01)
-fl = st.number_input("Lower-cutoff Frequency in GHz (fl)",min_value=0.01,max_value=5.00,step=0.01)
-fh = st.number_input("Higher-cutoff Frequency in GHz (fh)",min_value=0.01,max_value=5.00,step=0.01)
+fl = st.number_input("Lower cutoff Frequency in GHz (fl)",min_value=0.01,max_value=5.00,step=0.01)
+fh = st.number_input("Higher cutoff Frequency in GHz (fh)",min_value=0.01,max_value=5.00,step=0.01)
 bw = fh - fl
 fbw = bw / fr
-g = st.selectbox('Inter Element Spacing in mm (g)',(0.25,0.375,0.5))
+g = st.selectbox('Inter-element Spacing in mm (g)',(0.25,0.375,0.5))
 
 # creating a button for Prediction    
 if st.button("Predict"):
