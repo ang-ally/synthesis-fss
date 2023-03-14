@@ -11,6 +11,8 @@ st.title("Synthesis of Design Parameters of a Square Loop based FSS using ML Tec
 
 st.header('For FR-4 Substrate')
 
+st.subheader('Incident angle 𝜃= 0°')
+
 st.caption('The Range for Resonant Frequency (fr): 0 < fr < 5 GHz') 
 st.caption('The Range for Lower cutoff Frequency (fl): 0 < fl < 5 GHZ')
 st.caption('The Range for Higher cutoff Frequency (fh): 0 < fh < 5 GHz')
