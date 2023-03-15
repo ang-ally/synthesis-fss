@@ -7,7 +7,9 @@ import streamlit as st
 model_d = pickle.load(open('d_prediction.sav','rb'))
 model_s = pickle.load(open('s_prediction.sav','rb'))
 
-st.title("Synthesis of Design Parameters of a Square Loop based FSS using ML Technique")
+st.set_page_config(page_title="Square Loop FSS Synthesis")
+
+st.header("Synthesis of Design Parameters of a Square Loop based FSS using ML Technique")
 
 st.header('For FR-4 Substrate')
 
