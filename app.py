@@ -26,7 +26,7 @@ fbw = bw / fr
 g = st.selectbox('Inter-element Spacing in mm (g)',(0.25,0.375,0.5))
 
 # creating a button for Prediction    
-if st.button("Predict"):
+if st.button("Synthesize"):
     col1, col2 = st.columns(2)
     
     d_pred = model_d.predict([[h,fr,fl,fh,bw,fbw,g]])
