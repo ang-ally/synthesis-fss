@@ -25,26 +25,26 @@ h = st.selectbox('Height of the Substrate in mm (h)',(0.8,1.6,3.2))
 fr = st.number_input("Resonant Frequency in GHz (fr)",min_value=0.01,max_value=5.00,step=0.01)
 fl = st.number_input("Lower cutoff Frequency in GHz (fl)",min_value=0.01,max_value=5.00,step=0.01)
 fh = st.number_input("Higher cutoff Frequency in GHz (fh)",min_value=0.01,max_value=5.00,step=0.01)
-bw = fh - fl
-fbw = bw / fr
+BW = fh - fl
+FBW = bw / fr
 g = st.selectbox('Inter-element Spacing in mm (g)',(0.25,0.375,0.5))
 
 # creating a button for Prediction    
 if st.button("Synthesize"):
     col1, col2 = st.columns(2)
     
-    d_pred = model_d.predict([[h,fr,fl,fh,bw,fbw,g]])
+    d_pred = model_d.predict([[h,fr,fl,fh,BW,FBW,g]])
     d_pred=np.round(d_pred,2)
     col1.metric(label="Track Length in mm is : ",value=d_pred)
     
     df=pd.read_excel('final fr4 ds.xlsx')
-    X=df[['h','fr','fl','fh','bw','fbw','g']]
+    X=df[['h','fr','fl','fh','BW','FBW','g']]
     Y=df[['s']]
     scale_in=RobustScaler()
     scale_out=RobustScaler()
     x=scale_in.fit_transform(X)
     y=scale_out.fit_transform(Y)
-    prediction=scale_in.transform([[h,fr,fl,fh,bw,fbw,g]])
+    prediction=scale_in.transform([[h,fr,fl,fh,BW,FBW,g]])
     s_pred=model_s.predict(prediction)
     s_pred=s_pred.reshape(-1,1)
     s_pred=scale_out.inverse_transform(s_pred)
