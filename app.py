@@ -26,7 +26,7 @@ fr = st.number_input("Resonant Frequency in GHz (fr)",min_value=0.01,max_value=5
 fl = st.number_input("Lower cutoff Frequency in GHz (fl)",min_value=0.01,max_value=5.00,step=0.01)
 fh = st.number_input("Higher cutoff Frequency in GHz (fh)",min_value=0.01,max_value=5.00,step=0.01)
 BW = fh - fl
-FBW = bw / fr
+FBW = BW / fr
 g = st.selectbox('Inter-element Spacing in mm (g)',(0.25,0.375,0.5))
 
 # creating a button for Prediction    
