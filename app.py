@@ -53,10 +53,10 @@ if st.button("Synthesize"):
         s_pred=np.round(s_pred,2)
         col2.metric(label="Track Width in mm is: ",value=s_pred)  
     else:
-        e = RuntimeError('This is an exception of type RuntimeError')
-        st.exception(e)
-        #st.balloons()
-        st.warning('This is a warning', icon="⚠️")
-        st.success('This is a success message!', icon="✅")
-        st.error('This is an error', icon="🚨")
-        st.snow()
+        if fl>fr:
+            st.error('The Resonant frequency(fr) should be higher than the Lower cutoff frequency(fl) ', icon="🚨")
+        if fr>fh:
+            st.error('The Resonant frequency(fr) should be lower than the Higher cutoff frequency(fh) ', icon="🚨")
+        if fl<fh:
+            st.error('The Lower cutoff frequency(fl) should be lower than the Higher cutoff frequency(fh) ', icon="🚨")
+        
