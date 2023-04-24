@@ -55,8 +55,8 @@ if st.button("Synthesize"):
     else:
         e = RuntimeError('This is an exception of type RuntimeError')
         st.exception(e)
-        st.balloons()
+        #st.balloons()
         st.warning('This is a warning', icon="⚠️")
         st.success('This is a success message!', icon="✅")
         st.error('This is an error', icon="🚨")
-
+        st.snow()
