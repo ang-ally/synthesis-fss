@@ -53,7 +53,7 @@ if st.button("Synthesize"):
         s_pred=np.round(s_pred,2)
         col2.metric(label="Track Width in mm is: ",value=s_pred)  
     else:
-        e = RuntimeError('This is an exception of type RuntimeError')
+        e = Error('This is an exception of type RuntimeError')
         st.exception(e)
         
 
