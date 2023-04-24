@@ -59,4 +59,3 @@ if st.button("Synthesize"):
             st.error('The Resonant frequency(fr) should be lower than the Higher cutoff frequency(fh) ', icon="🚨")
         if fl<fh:
             st.error('The Lower cutoff frequency(fl) should be lower than the Higher cutoff frequency(fh) ', icon="🚨")
-        
