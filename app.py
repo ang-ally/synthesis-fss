@@ -31,24 +31,29 @@ g = st.selectbox('Inter-element Spacing in mm (g)',(0.25,0.375,0.5))
 
 # creating a button for Prediction    
 if st.button("Synthesize"):
-    col1, col2 = st.columns(2)
-    
-    d_pred = model_d.predict([[h,fr,fl,fh,BW,FBW,g]])
-    d_pred=np.round(d_pred,2)
-    col1.metric(label="Track Length in mm is : ",value=d_pred)
-    
-    df=pd.read_excel('final fr4 ds.xlsx')
-    X=df[['h','fr','fl','fh','BW','FBW','g']]
-    Y=df[['s']]
-    scale_in=RobustScaler()
-    scale_out=RobustScaler()
-    x=scale_in.fit_transform(X)
-    y=scale_out.fit_transform(Y)
-    prediction=scale_in.transform([[h,fr,fl,fh,BW,FBW,g]])
-    s_pred=model_s.predict(prediction)
-    s_pred=s_pred.reshape(-1,1)
-    s_pred=scale_out.inverse_transform(s_pred)
-    s_pred=s_pred.reshape(1,-1) 
-    s_pred=np.round(s_pred,2)
-    col2.metric(label="Track Width in mm is: ",value=s_pred)  
+    if fl<fr and fr<fh and fl<fh:
+        col1, col2 = st.columns(2)
+
+        d_pred = model_d.predict([[h,fr,fl,fh,BW,FBW,g]])
+        d_pred=np.round(d_pred,2)
+        col1.metric(label="Track Length in mm is : ",value=d_pred)
+
+        df=pd.read_excel('final fr4 ds.xlsx')
+        X=df[['h','fr','fl','fh','BW','FBW','g']]
+        Y=df[['s']]
+        scale_in=RobustScaler()
+        scale_out=RobustScaler()
+        x=scale_in.fit_transform(X)
+        y=scale_out.fit_transform(Y)
+        prediction=scale_in.transform([[h,fr,fl,fh,BW,FBW,g]])
+        s_pred=model_s.predict(prediction)
+        s_pred=s_pred.reshape(-1,1)
+        s_pred=scale_out.inverse_transform(s_pred)
+        s_pred=s_pred.reshape(1,-1) 
+        s_pred=np.round(s_pred,2)
+        col2.metric(label="Track Width in mm is: ",value=s_pred)  
+    else:
+        e = RuntimeError('This is an exception of type RuntimeError')
+        st.exception(e)
+        
 
