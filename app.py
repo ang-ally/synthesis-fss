@@ -53,10 +53,13 @@ if st.button("Synthesize"):
         s_pred=np.round(s_pred,2)
         col2.metric(label="Track Width in mm is: ",value=s_pred)  
     else:
-        with st.container():
-            if fl>fr:
-                st.error('The Resonant frequency(fr) should be higher than the Lower cutoff frequency(fl) ', icon="🚨")
-            if fr>fh:
-                st.error('The Resonant frequency(fr) should be lower than the Higher cutoff frequency(fh) ', icon="🚨")
-            if fl>fh:
-                st.error('The Lower cutoff frequency(fl) should be lower than the Higher cutoff frequency(fh) ', icon="🚨")
+        if fl>=fr and fr>=fh and fl>=fh:
+            st.error('The Resonant frequency(fr) should be lie between the Lower cutoff frequency(fl) and the Higher cutoff frequency(fh)  (i.e) fl < fr < fh ', icon="🚨")
+        else:
+            with st.container():
+                if fl>=fr:
+                    st.error('The Resonant frequency(fr) should be higher than the Lower cutoff frequency(fl) ', icon="🚨")
+                if fr>=fh:
+                    st.error('The Resonant frequency(fr) should be lower than the Higher cutoff frequency(fh) ', icon="🚨")
+                if fl>=fh:
+                    st.error('The Lower cutoff frequency(fl) should be lower than the Higher cutoff frequency(fh) ', icon="🚨")
