@@ -55,7 +55,7 @@ if st.button("Synthesize"):
         col2.metric(label="Track Width in mm is: ",value=s_pred) 
         d = int(d_pred[0])
         s = int(s_pred[0])
-        g = int(g)
+        g = g
         p = d + g
         a = d - s
         b = p + s
