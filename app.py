@@ -227,8 +227,8 @@ if st.button("Synthesize"):
         # Set chart title and axes labels
         fig.update_layout(title="Square Loop FSS")
 
-        fig.update_xaxes(tickmode="linear", tick0=0, dtick=g, rangemode="normal")
-        fig.update_yaxes(tickmode="linear", tick0=0, dtick=g, rangemode="normal")
+        fig.update_xaxes(tickmode="auto", rangemode="normal")
+        fig.update_yaxes(tickmode="auto", rangemode="normal")
 
         # Remove the x and y axes and their labels and tick marks
         fig.update_xaxes(
@@ -247,8 +247,8 @@ if st.button("Synthesize"):
         )
 
         fig.update_layout(
-            width=500,
-            height=500
+            width=800,
+            height=800
         )
 
         # Display the plot using Streamlit
