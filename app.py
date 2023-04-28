@@ -53,8 +53,8 @@ if st.button("Synthesize"):
         s_pred=s_pred.reshape(1,-1) 
         s_pred=np.round(s_pred,2)
         col2.metric(label="Track Width in mm is: ",value=s_pred) 
-        d = int(d_pred[0])
-        s = int(s_pred[0])
+        d = float(d_pred[0])
+        s = float(s_pred[0])
         g = g
         p = d + g
         a = d - s
