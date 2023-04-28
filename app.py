@@ -247,8 +247,8 @@ if st.button("Synthesize"):
         )
 
         fig.update_layout(
-            width=1000,
-            height=1000
+            width=500,
+            height=500
         )
 
         # Display the plot using Streamlit
