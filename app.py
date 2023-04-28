@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import RobustScaler
 import streamlit as st
+import plotly.graph_objs as go
 
 model_d = pickle.load(open('d_prediction.sav','rb'))
 model_s = pickle.load(open('s_prediction.sav','rb'))
