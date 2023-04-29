@@ -180,7 +180,7 @@ if st.button("Synthesize"):
                            showarrow=True,xref='x1',yref='y1',
                             axref='x1', ayref='y1',
                            arrowcolor='black', arrowwidth=1.5,arrowhead=1,xshift=12)                   
-        fig.add_annotation(x=c+1.5+g , y=d, ax=c+1.5+g, ay=0,textangle=-90,xshift=20+g,
+        fig.add_annotation(x=c+1.5+g , y=d, ax=c+1.5+g, ay=0,textangle=-90,xshift=20+(3.78*g),
                            showarrow=False,text=f'Inter-element Spacing (g): {g:.3f} mm',  font=dict(
                 family="Arial",
                 size=14,
@@ -188,12 +188,16 @@ if st.button("Synthesize"):
             ))
 
         #for s
-        fig.add_annotation(x=s , y=d/2, ax=0, ay=d/2,standoff=0,
+        fig.add_annotation(x=0 , y=d/2, ax=-s, ay=d/2,
+                   showarrow=True,xref='x1',yref='y1',
+                    axref='x1', ayref='y1',
+                   arrowcolor='black', arrowwidth=1.5, arrowhead=1)
+        fig.add_annotation(x=s , y=d/2, ax=s+s, ay=d/2,
                            showarrow=True,xref='x1',yref='y1',
                             axref='x1', ayref='y1',
-                           arrowcolor='black', arrowwidth=2,arrowside='start+end', arrowhead=None)
-        fig.add_annotation(x=0 , y=d/2, ax=0, ay=0,xshift=-15,textangle=-90,
-                           showarrow=False,text=f'Track width (s): {s:.2f} mm',  font=dict(
+                           arrowcolor='black', arrowwidth=1.5, arrowhead=1)                   
+        fig.add_annotation(x=0 , y=d/2, ax=0, ay=0,xshift=-(32+(s*3.78)),textangle=-90,
+                           showarrow=False,text=f' Track  width  (s): {s:.2f} mm',  font=dict(
                 family="Arial",
                 size=14,
                 color="black"
